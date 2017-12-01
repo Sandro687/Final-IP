@@ -7,6 +7,7 @@
 
 //Passo 1 - Codigo fonte:
 
+
 typedef struct 
         { 
         char descricaoRegistro [30]; 
@@ -14,6 +15,7 @@ typedef struct
         int RegistroCadastr [3];
         int indice [30];
         } Registro; 
+
 
 //Passo 2 - Codigo fonte:
 
