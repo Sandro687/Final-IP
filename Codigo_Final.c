@@ -1,6 +1,3 @@
-//Aqui sera posto o codigo final, isto e, a juncao de todos os passos. Sintam-se livres para edita-lo como quiserem, apenas lembrem-se
-//de clicar no "Create Pull Request", ou o codigo aparecera editado para voce, mas nao para os outros.
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -34,17 +31,21 @@ int CadstrOcorr()
             if ((Registro.RegistrosX[i] == 0) && (Registro.RegistrosY [i] == 0))
                     break;
             printf("Insira a descricao das coordenadas (%d, %d) inseridas\n.", Registro.RegistrosX[i], Registro.RegistrosY[i]);
+            getchar();
             fgets(Registro.descricaoRegistro[i], sizeof(Registro.descricaoRegistro[i]), stdin);
             i++;
      }
 }
 int main (void){
 
-void ListrOcorr()
+int ListrOcorr()
 {
-    printf("...\n");
+    int i, j;
+        for (i = 0; i < 14; i++){
+                printf("Coordenadas: (%d, %d)\n", Registro.RegistrosX[i], Registro.RegistrosY[i]);
+                printf("%s", Registro.descricaoRegistro[i]);
+            }
 }
-
 void ConsultOcorr();
 {
     printf("...\n");
@@ -72,7 +73,6 @@ void sair()
         printf("0. Sair\n");
 
         scanf("%d", &continuar);
-        system("cls || clear"); //Limpa a tela
 
         switch(continuar)
         {
