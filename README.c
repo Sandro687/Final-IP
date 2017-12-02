@@ -13,9 +13,6 @@
                 char descricaoRegistro [450];
                 int RegistrosX [15];
                 int RegistrosY [15];
-                int RegistroCadastrX [15];
-                int RegistroCadastrY[15]
-                int indice [30];
                 } Registro; 
         int arr[30];    //O "arr[30]" sera global.
         
