@@ -36,10 +36,11 @@ typedef struct
 
         double PontosProximos (double raio){
                 int i, j;
+                int *Registro.RegistrosX, *Registro.RegistrosY;
                 for (i = 0; i < 15; i++){
                         for (j = 0; j < 15; j++){
-                                if (sqrt(pow((RegistrosX [j] - RegistroX [i]), 2) + (pow(RegistrosY [j] - RegistroY [i]), 2)) <= raio){
-                                        printf("As coordenadas (%lf, %lf) e (%lf, %lf) estao proximas ao raio inserido!", RegistrosX [j], RegistrosY [j], RegistrosX[i], RegistrosY[i]);
+                                if (sqrt(pow((Registro.RegistrosX [j] - Registro.RegistroX [i]), 2) + (pow(Registro.RegistrosY [j] - Registro.RegistroY [i]), 2)) <= raio){
+                                        printf("As coordenadas (%lf, %lf) e (%lf, %lf) estao proximas ao raio inserido!", Registro.RegistrosX [j], Registro.RegistrosY [j], Registro.RegistrosX[i], Registro.RegistrosY[i]);
                                 }
 
 //Passo 3 - Codigo fonte:
