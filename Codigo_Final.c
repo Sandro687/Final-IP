@@ -12,9 +12,9 @@
         char descricaoRegistro [15][30];
         int RegistrosX [15];
         int RegistrosY [15];
-    } Registro;
-
-    double PontosProximos (double RAIO){
+    } registroD;
+    registroD Registro;
+    double PontosProximos (){
         int i, j;
         for (i = 0; i < 14; i++){
             for (j = 0; j < 14; j++){
@@ -87,7 +87,7 @@ void sair()
             case 3:
                 break;
 
-            case 4;
+            case 4:
                 break;
 
             case 0:
@@ -98,7 +98,6 @@ void sair()
                 printf("Digite uma opcao valida\n");
         }
     } while(continuar);
-}
+
   return 0;
 }
-
