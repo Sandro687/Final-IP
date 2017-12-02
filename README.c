@@ -23,8 +23,8 @@
 
         double PontosProximos (double raio){
                 int i, j;
-                for (i = 0; i < 15; i++){
-                        for (j = 0; j < 15; j++){
+                for (i = 0; i < 14; i++){
+                        for (j = 0; j < 14; j++){
                                 if (sqrt(pow((Registro.RegistrosX [j] - Registro.RegistrosX [i]), 2) + (pow(Registro.RegistrosY [j] - Registro.RegistrosY [i]), 2)) <= raio){
                                         printf("As coordenadas (%lf, %lf) e (%lf, %lf) estao proximas ao raio inserido!", Registro.RegistrosX [j], Registro.RegistrosY [j], Registro.RegistrosX[i], Registro.RegistrosY[i]);
                                 }
