@@ -111,20 +111,27 @@ int CadstrOcorr()
             arr[i] = strlen(descricaoRegistroTemp);     //"arr[i]" sera usado para delimitar as strings salvas na variavel string global.
             strcat(descricaoRegistro, descricaoRegistroTemp);
             i++;
+     }
 }
 
-//Passo 5 - Codigo fonte:
+//Passo 5 - Codigo fonte:                       //A funcao "ListrOcorr()" do passo 3 sera agora atualizada.
 
-
-
-
-
-
-
-
-
-
-
+int ListrOcorr()
+{ 
+    int i = 0, j = 0, l = 0;
+        for (i = 0; i < 14; i++){
+                for (j = 0; j < 14; j++){
+                        printf("Ocorrencia: (%d,%d).\n", Registro.RegistrosX[i], Registro.RegistrosY[j]);
+                        if ((Registro.RegistrosX[i] == 0) && (Registro.RegistrosY[i] == 0)){
+                                for (l = 0; l < arr[i]; l++)
+                                printf("%c", descricaoRegistro[l]);
+                                
+                        }
+                        else{
+                                for (l = 0; (l > arr[i-1]) && (l < arr[i+1]; l++){
+                                printf("%c", descricaoRegistro[l]);
+                                }
+                        }
 
 //Passo 6 - Codigo fonte:
 
