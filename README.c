@@ -17,7 +17,7 @@
                 int RegistroCadastrY[15]
                 int indice [30];
                 } Registro; 
-        arr[30]    //O "arr[30]" sera global.
+        int arr[30];    //O "arr[30]" sera global.
         
 //Passo 2 - Codigo fonte:
 
