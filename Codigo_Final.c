@@ -9,12 +9,10 @@
 #define RAIO 5
 
     typedef struct{
-        char descricaoRegistro [450];
+        char descricaoRegistro [15][30];
         int RegistrosX [15];
         int RegistrosY [15];
     } Registro;
-
-    int arr[30];
 
     double PontosProximos (double RAIO){
         int i, j;
@@ -30,39 +28,17 @@
 int CadstrOcorr()
 {
     int i = 0;
-    char descricaoRegistroTemp[30];
     while(1){
             printf("Insira as coordenadas (x,y), respectivamente.\n");
             scanf("%d%d", &Registro.RegistrosX[i], &Registro.RegistrosY[i]);
             if ((Registro.RegistrosX[i] == 0) && (Registro.RegistrosY [i] == 0))
                     break;
             printf("Insira a descricao das coordenadas (%d, %d) inseridas\n.", Registro.RegistrosX[i], Registro.RegistrosY[i]);
-            fgets(descricaoRegistroTemp, sizeof(descricaoRegistroTemp), stdin);
-            arr[i] = strlen(descricaoRegistroTemp);     //"arr[i]" sera usado para delimitar as strings salvas na variavel string global.
-            strcat(descricaoRegistro, descricaoRegistroTemp);
+            fgets(descricaoRegistro[i], sizeof(descricaoRegistro[i]), stdin);
             i++;
      }
 }
-int ListrOcorr()
-{
-    int i = 0, j = 0, l = 0;
-        for (i = 0; i < 14; i++){
-                for (j = 0; j < 14; j++){
-                        printf("Ocorrencia: (%d,%d).\n", Registro.RegistrosX[i], Registro.RegistrosY[j]);
-                        if ((Registro.RegistrosX[i] == 0) && (Registro.RegistrosY[i] == 0)){
-                                for (l = 0; l < arr[i]; l++)
-                                printf("%c", descricaoRegistro[l]);
-
-                        }
-                        else{
-                                for (l = 0; (l > arr[i-1]) && (l < arr[i+1]; l++){
-                                printf("%c", descricaoRegistro[l]);
-                                }
 int main (void){
-void CadstrOcorr()
-{
-    printf("...\n");
-}
 
 void ListrOcorr()
 {
@@ -123,7 +99,5 @@ void sair()
         }
     } while(continuar);
 }
-
-
   return 0;
 }
