@@ -23,7 +23,7 @@
 
         double PontosProximos (double raio){
                 int i, j;
-                int *Registro.RegistrosX, *Registro.RegistrosY;
+                int Registro.RegistrosX, Registro.RegistrosY;
                 for (i = 0; i < 15; i++){
                         for (j = 0; j < 15; j++){
                                 if (sqrt(pow((Registro.RegistrosX [j] - Registro.RegistrosX [i]), 2) + (pow(Registro.RegistrosY [j] - Registro.RegistrosY [i]), 2)) <= raio){
