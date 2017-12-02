@@ -34,7 +34,7 @@ int CadstrOcorr()
             if ((Registro.RegistrosX[i] == 0) && (Registro.RegistrosY [i] == 0))
                     break;
             printf("Insira a descricao das coordenadas (%d, %d) inseridas\n.", Registro.RegistrosX[i], Registro.RegistrosY[i]);
-            fgets(descricaoRegistro[i], sizeof(descricaoRegistro[i]), stdin);
+            fgets(Registro.descricaoRegistro[i], sizeof(Registro.descricaoRegistro[i]), stdin);
             i++;
      }
 }
@@ -101,3 +101,4 @@ void sair()
 }
   return 0;
 }
+
