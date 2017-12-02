@@ -25,6 +25,9 @@
                                 if (sqrt(pow((Registro.RegistrosX [j] - Registro.RegistrosX [i]), 2) + (pow(Registro.RegistrosY [j] - Registro.RegistrosY [i]), 2)) <= raio){
                                         printf("As coordenadas (%lf, %lf) e (%lf, %lf) estao proximas ao raio inserido!", Registro.RegistrosX [j], Registro.RegistrosY [j], Registro.RegistrosX[i], Registro.RegistrosY[i]);
                                 }
+                        }
+                }
+        }
 
 //Passo 3 - Codigo fonte:
                             
