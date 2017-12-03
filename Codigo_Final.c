@@ -50,7 +50,7 @@ void GeraRelatorio(){
     printf("...\n");
 }
 void sair(){
-    printf("...\n");
+    printf("Programa encerrado.\n");
 }
 int main (void){
 
