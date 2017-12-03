@@ -13,14 +13,14 @@
     registroD Registro;
 
   void ConsultOcorr(){
-        int i = 0, j;
-        printf("Digite as coordenadas (x,y) desejadas.\n")/
+        int i = 14, j;
+        double distancia;
+        printf("Digite as coordenadas (x, y) desejadas.\n");
         scanf("%d%d", &Registro.RegistrosX[i], &Registro.RegistrosY[i]);
-        for (i = 0; i < 14; i++){
             for (j = 0; j < 14; j++){
-                if (sqrt(pow((Registro.RegistrosX [j] - Registro.RegistrosX [i]), 2) + (pow((Registro.RegistrosY [j] - Registro.RegistrosY [i]), 2)) <= RAIO)){
-                    printf("\nAs coordenadas (%d, %d) e (%d, %d) estao proximas ao raio inserido!\n", Registro.RegistrosX [j], Registro.RegistrosY [j], Registro.RegistrosX[i], Registro.RegistrosY[i]);
-                }
+                distancia = sqrt(pow((Registro.RegistrosX [j] - Registro.RegistrosX [i]), 2) + (pow((Registro.RegistrosY [j] - Registro.RegistrosY [i]), 2)));
+                if ((distancia <= RAIO) && (Registro.RegistrosX[j] > 0) && (Registro.RegistrosY[j] > 0) && ((Registro.RegistrosX[j] + Registro.RegistrosY[j]) != (Registro.RegistrosX[i] + Registro.RegistrosY[i]))){
+                    printf("\nAs coordenadas (%d, %d) estao proximas a regiao inserida!\n", Registro.RegistrosX [j], Registro.RegistrosY [j]);
             }
         }
     }
@@ -45,9 +45,11 @@ int ListrOcorr()
 {
     int i, j;
         for (i = 0; i < 14; i++){
-                printf("Coordenadas: (%d, %d)\n", Registro.RegistrosX[i], Registro.RegistrosY[i]);
+                if ((Registro.RegistrosX[i] > 0) && (Registro.RegistrosY[i] > 0)){
+                printf("\nCoordenadas: (%d, %d)\n", Registro.RegistrosX[i], Registro.RegistrosY[i]);
                 printf("%s", Registro.descricaoRegistro[i]);
-            }
+                }
+        }
 }
 
 void GeraRelatorio()
