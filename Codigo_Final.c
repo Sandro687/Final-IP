@@ -11,7 +11,6 @@
         int RegistrosY [15];
     } registroD;
     registroD Registro;
-
   void ConsultOcorr(){
         int i = 14, j;
         double distancia;
@@ -53,7 +52,6 @@ void sair(){
     printf("Programa encerrado.\n");
 }
 int main (void){
-
     int continuar = 1;
     do{
         printf("\n\tMenu\n\n");
@@ -62,33 +60,25 @@ int main (void){
         printf("3. Consultar ocorrencias por regiao\n");
         printf("4. Gerar relatorios de ocorrencias por tipo\n");
         printf("0. Sair\n");
-
         scanf("%d", &continuar);
-
         switch(continuar){
             case 1:
                 CadstrOcorr();
                 break;
-
             case 2:
                 ListrOcorr();
                 break;
-
             case 3:
                 ConsultOcorr();
                 break;
-
             case 4:
                 break;
-
             case 0:
                 sair();
                 break;
-
             default:
                 printf("Digite uma opcao valida\n");
         }
     }while(continuar);
-
   return 0;
 }
