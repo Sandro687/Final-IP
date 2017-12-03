@@ -24,9 +24,7 @@
             }
         }
     }
-
-int CadstrOcorr()
-{
+int CadstrOcorr(){
     int i = 0;
     while(1){
             printf("Insira as coordenadas (x,y), respectivamente.\n");
@@ -39,10 +37,7 @@ int CadstrOcorr()
             i++;
      }
 }
-int main (void){
-
-int ListrOcorr()
-{
+int ListrOcorr(){
     int i, j;
         for (i = 0; i < 14; i++){
                 if ((Registro.RegistrosX[i] > 0) && (Registro.RegistrosY[i] > 0)){
@@ -51,21 +46,16 @@ int ListrOcorr()
                 }
         }
 }
-
-void GeraRelatorio()
-{
+void GeraRelatorio(){
     printf("...\n");
 }
-void sair()
-{
+void sair(){
     printf("...\n");
 }
-
+int main (void){
 
     int continuar = 1;
-
-    do
-    {
+    do{
         printf("\n\tMenu\n\n");
         printf("1. Cadastrar ocorrencias\n");
         printf("2. Listar ocorrencias\n");
@@ -75,8 +65,7 @@ void sair()
 
         scanf("%d", &continuar);
 
-        switch(continuar)
-        {
+        switch(continuar){
             case 1:
                 CadstrOcorr();
                 break;
@@ -99,7 +88,7 @@ void sair()
             default:
                 printf("Digite uma opcao valida\n");
         }
-    } while(continuar);
+    }while(continuar);
 
   return 0;
 }
