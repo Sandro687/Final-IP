@@ -19,7 +19,7 @@
         scanf("%d%d", &Registro.RegistrosX[i], &Registro.RegistrosY[i]);
             for (j = 0; j < 14; j++){
                 distancia = sqrt(pow((Registro.RegistrosX [j] - Registro.RegistrosX [i]), 2) + (pow((Registro.RegistrosY [j] - Registro.RegistrosY [i]), 2)));
-                if ((distancia <= RAIO) && (Registro.RegistrosX[j] > 0) && (Registro.RegistrosY[j] > 0) && ((Registro.RegistrosX[j] + Registro.RegistrosY[j]) != (Registro.RegistrosX[i] + Registro.RegistrosY[i]))){
+                if ((distancia <= RAIO) && (Registro.RegistrosX[j] > 0) && (Registro.RegistrosY[j] > 0) && (Registro.RegistrosX[j] != Registro.RegistrosX[i]) && (Registro.RegistrosY[j] != Registro.RegistrosY[i])){
                     printf("\nAs coordenadas (%d, %d) estao proximas a regiao inserida!\nA coordenada e do tipo %s.", Registro.RegistrosX [j], Registro.RegistrosY [j], Registro.descricaoRegistro[j]);
             }
         }
@@ -51,17 +51,24 @@ int GeraRelatorio(){
     int i, j = 0;
     double porcentagem;
     char strtemp[30];
+    FILE *fp;
+    fp = fopen("relatorio.txt", "w");
     printf("Digite a descricao a ser procurada.\n");
     getchar();
     fgets(strtemp, sizeof(strtemp), stdin);
     for (i = 0; i < 14; i++){
         if (strcmp (Registro.descricaoRegistro[i], strtemp) == 0){
-            printf("\n--------O tipo inserido apareceu nas coordenadas (%d, %d)--------", Registro.RegistrosX[i], Registro.RegistrosY[i]);
+            //strtemp[strlen(strtemp)-1] = '\0';
+            fprintf(fp, "\n--------O tipo %s inserido apareceu nas coordenadas (%d, %d)--------", strtemp, Registro.RegistrosX[i], Registro.RegistrosY[i]);
+            printf("\n--------O tipo %s inserido apareceu nas coordenadas (%d, %d)--------", strtemp, Registro.RegistrosX[i], Registro.RegistrosY[i]);
             j++;
         }
     }printf("\n\n--------------Houveram um total de %d ocorrencias---------------\n\n", j);
+    fprintf(fp, "\n\n--------------Houveram um total de %d ocorrencias---------------\n\n", j);
     porcentagem = ((double)j / Registro.QtdCadastr) * 100;
     printf("A ocorrencia inserida possui uma porcentagem de %.2lf em relacao ao total.\n\n", porcentagem);
+    fprintf(fp, "A ocorrencia inserida possui uma porcentagem de %.2lf em relacao ao total.\n\n", porcentagem);
+    fclose(fp);
 }
 void sair(){
     printf("Programa encerrado.\n");
